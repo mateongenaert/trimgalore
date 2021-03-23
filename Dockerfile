@@ -37,8 +37,8 @@ RUN pip3 install cutadapt==${CUTADAPT_VERSION}
 WORKDIR /home
 ENV TRIM_GALORE_VERSION 0.6.6
 
-curl -fsSL https://github.com/FelixKrueger/TrimGalore/archive/${TRIM_GALORE_VERSION}.tar.gz -o trim_galore.tar.gz
-tar xvzf trim_galore.tar.gz
+RUN curl -fsSL https://github.com/FelixKrueger/TrimGalore/archive/${TRIM_GALORE_VERSION}.tar.gz -o trim_galore.tar.gz
+RUN tar xvzf trim_galore.tar.gz
 
 ENV PATH /home/TrimGalore-${TRIM_GALORE_VERSION}/:${PATH}
 ENV LD_LIBRARY_PATH "/usr/local/lib:${LD_LIBRARY_PATH}"
